@@ -16,18 +16,58 @@
 
   <head>
     <style>
-      /*
-            EX1) Write a selector to target the h1 in jumbotron
-            EX2) Write a selector to target every children of the navbar
-            EX3) Write a selector to target the "continue reading..." inside the jumbotron
-            EX4) Write a selector to target the first blogpost
-            EX5) Write a selector to target the "even" links in the navbar
-            EX6) Write a selector to target the last blog post
-            EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives )
-            EX8) Write a selector to target the second post author
-            EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly
-            EX10) Write a selector to target the footer
-        */
+      
+          
+       
+        /*EX1) Write a selector to target the h1 in jumbotron*/
+        h1{
+          color: lightseagreen;
+        }
+
+        /* EX2) Write a selector to target every children of the navbar */
+        nav a{
+          background-color: lightgreen;
+        }
+
+        /* EX3) Write a selector to target the "continue reading..." inside the jumbotron */
+        p.lead>a.text-white{
+          border: 3px dotted purple;
+          padding: 3px;
+        }
+        /* EX4) Write a selector to target the first blogpost */
+        div.blog-post:first-of-type{
+          background-color: orange;
+        }
+        /* EX5) Write a selector to target the "even" links in the navbar */
+        div nav a:nth-child(even){
+          border: 2px solid black;
+        }
+        /* EX6) Write a selector to target the last blog post */
+        div.blog-post:last-of-type{
+          background-color: lightcoral;
+        }
+        /* EX7) Write a selector to target all the li into the first ordered-list in the sidebar ( Archives ) */
+        div ol.list-unstyled.mb-0 li:nth-child(odd){
+          background-color: crimson;
+        }
+        div ol.list-unstyled.mb-0 li:nth-child(even){
+          background-color: lightskyblue;
+        }
+        /* EX8) Write a selector to target the second post author */
+        .blog-post:nth-child(2) p.blog-post-meta a{
+          text-decoration: underline purple;
+          background-color: white;
+        }
+        /* EX9) Write a selector to target the "back to top" link     #### EXTRA Try doing it without targeting the footer element directly */
+          /* p > a[href*="twitter"] {
+          color: white;
+        }   */
+        /* not working yet */
+
+        /* EX10) Write a selector to target the footer */
+        footer{
+          background: lightsalmon;
+        }
     </style>
     <meta charset="utf-8" />
     <meta
@@ -442,19 +482,31 @@
     </footer>
 
     <script>
-      /*
-        JS Exercises
-        EX11) Write a function to add a new link into the navbar
-        EX12) Write a function to change the color of the main title
-        EX13) Write a function to change the background of the jumbotron
-        EX14) Write a function to remove all the links under "Elsewhere"
-        EX15) Write a function to change the column size for heading in jumbotron
-        EX16) Write a function to remove the "Search" magnifying glass icon
-        EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
-        EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
-        EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
-        EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
-    */
+    //   /*
+    //     JS Exercises
+    //     EX11) Write a function to add a new link into the navbar
+    const addNewLink = function (){
+      //target the parent container (nav)
+          let navBar = document.querySelector("nav")
+      //create new link 
+          let newLink = document.createElement("a")
+      //add class to new element
+          newLink.className ="p-2 text-muted"
+          // newLink.setAttribute=(href, "")
+          //if I do set attribute to href then it won't work - find out why 
+      //append newLink into parent container
+          navBar.appendChild(newLink)
+    }
+    //     EX12) Write a function to change the color of the main title
+    //     EX13) Write a function to change the background of the jumbotron
+    //     EX14) Write a function to remove all the links under "Elsewhere"
+    //     EX15) Write a function to change the column size for heading in jumbotron
+    //     EX16) Write a function to remove the "Search" magnifying glass icon
+    //     EX17) Write a function to trim just the first 50 characters in the first paragraph for each blog post
+    //     EX18) Write a function and attach it to the "Newer" button, to add new Blog Post (just div and title)
+    //     EX19) Write a function and attach it to the "Older" button, to remove the last Blog Post
+    //     EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
+    // */
     </script>
   </body>
 </html>
